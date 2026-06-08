@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="MAGOCLUB">
+  <rect width="64" height="64" rx="14" ry="14" fill="#1C140D"/>
+  <text x="32" y="33" fill="#FBF4E4"
+        font-family="Fraunces, Georgia, 'Times New Roman', serif"
+        font-size="30" font-weight="600" font-style="italic"
+        text-anchor="middle" dominant-baseline="central"
+        letter-spacing="-1">MC</text>
+</svg>

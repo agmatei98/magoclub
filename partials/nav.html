@@ -1,0 +1,34 @@
+<!--
+  MAGOCLUB primary nav.
+  Loaded by js/include.js into [data-include="partials/nav.html"].
+  Active state is set via data-page on the host page's <body> or <html>:
+    <body data-page="home"|"about"|"pillars"|"body"|"skill"|"mind"|"connection"|"mago-house"|"register">
+-->
+<nav class="site-nav" aria-label="Primary">
+  <div class="frame">
+    <a href="{{ROOT}}index.html" class="wordmark" aria-label="MAGOCLUB home">MAGO<em>CLUB</em></a>
+
+    <ul class="primary">
+      <li><a href="{{ROOT}}index.html" data-nav="home">Home</a></li>
+      <li><a href="{{ROOT}}about.html" data-nav="about">About</a></li>
+      <li class="has-dropdown">
+        <button type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-pillars" data-nav-parent="pillars">
+          The Pillars <span class="caret" aria-hidden="true"></span>
+        </button>
+        <div class="dropdown" id="dd-pillars" role="menu">
+          <a href="{{ROOT}}the-pillars/body.html" role="menuitem" data-nav="body"><span class="roman-num">I</span><span><strong>Body</strong> <span class="desc">Personal Training — The Foundation</span></span></a>
+          <a href="{{ROOT}}the-pillars/skill.html" role="menuitem" data-nav="skill"><span class="roman-num">II</span><span><strong>Skill</strong> <span class="desc">Couture Combat™ — Female only</span></span></a>
+          <a href="{{ROOT}}the-pillars/mind.html" role="menuitem" data-nav="mind"><span class="roman-num">III</span><span><strong>Mind</strong> <span class="desc">Mindset Architecture — Elite Wellness Coaching</span></span></a>
+          <a href="{{ROOT}}the-pillars/connection.html" role="menuitem" data-nav="connection"><span class="roman-num">IV</span><span><strong>Connection</strong> <span class="desc">The Assembly — Curated events</span></span></a>
+        </div>
+      </li>
+      <li><a href="{{ROOT}}mago-house.html" data-nav="mago-house">MAGO House</a></li>
+    </ul>
+
+    <a href="{{ROOT}}register-interest.html" class="nav-cta" data-nav="register">By private inquiry</a>
+
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</nav>

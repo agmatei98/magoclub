@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Leave your details to be contacted by Maria Elena Cismarescu, founder of MAGOCLUB. Marylebone, London." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Register Your Interest | MAGOCLUB</title>
+
+  <link rel="canonical" href="https://magoclub.co.uk/register-interest.html" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+</head>
+<body data-page="register">
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div data-include="partials/nav.html"></div>
+
+  <main id="main">
+
+    <section class="form-page" id="register" aria-labelledby="register-headline">
+      <div class="lhs" data-reveal-load>
+        <p class="label-tic">By private inquiry</p>
+        <h1 id="register-headline" class="t-display-m">
+          A short conversation, <span class="italic">before any commitment.</span>
+        </h1>
+        <p class="t-body-l">
+          Leave your details and Maria will be in touch personally within five
+          working days. Membership at MAGOCLUB is by introduction; this form is
+          the introduction.
+        </p>
+        <div class="portrait">
+          <img src="images/New Images/morgan-petroski-rx6wXNsXUOE-unsplash.jpg" alt="Editorial portrait — placeholder pending Maria's bespoke shoot." loading="lazy" decoding="async" />
+        </div>
+      </div>
+
+      <form
+        class="register-form"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        aria-labelledby="form-headline"
+        novalidate
+      >
+        <!-- Web3Forms config — public access key (safe to expose; rate-limited per inbox) -->
+        <input type="hidden" name="access_key" value="212a7d89-524b-4f49-aabf-25842f986618" />
+        <input type="hidden" name="subject" value="MAGOCLUB — new private inquiry" />
+        <input type="hidden" name="from_name" value="MAGOCLUB website" />
+        <!-- Tell Web3Forms not to redirect; we handle the response in JS -->
+        <input type="hidden" name="redirect" value="false" />
+
+        <header data-reveal="rise">
+          <p class="eyebrow label-tic">Register your interest</p>
+          <h2 id="form-headline" class="t-display-m">Introduce yourself.</h2>
+          <p>We reply within five working days. Your details are never shared.</p>
+        </header>
+
+        <div class="form-body" style="display: grid; gap: var(--space-6);">
+
+          <div class="fld">
+            <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="err-name" placeholder="Maria Elena Cismarescu" />
+            <span class="error-msg" id="err-name">Please enter your name.</span>
+          </div>
+
+          <div class="fld-row">
+            <div class="fld">
+              <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="err-email" placeholder="you@domain.com" />
+              <span class="error-msg" id="err-email">Please enter a valid email.</span>
+            </div>
+            <div class="fld">
+              <label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" required aria-required="true" aria-describedby="err-phone" placeholder="+44 20 0000 0000" />
+              <span class="error-msg" id="err-phone">Please enter a phone number.</span>
+            </div>
+          </div>
+
+          <fieldset class="checkbox-group" aria-labelledby="topic-label">
+            <legend id="topic-label" class="group-label">What brings you to MAGOCLUB? <span style="opacity:0.6; font-weight:400; text-transform:none; letter-spacing:0;">(select all that apply)</span></legend>
+            <div class="checkbox-row">
+              <label class="checkbox">
+                <input type="checkbox" name="topic[]" value="Personal Training (Body)" />
+                <span>Personal Training (Body)</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="topic[]" value="Couture Combat (Skill)" />
+                <span>Couture Combat™ (Skill)</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="topic[]" value="Wellness Coaching (Mind)" />
+                <span>Wellness Coaching (Mind)</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="topic[]" value="The Assembly (Connection)" />
+                <span>The Assembly (Connection)</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="topic[]" value="MAGO House & partnership" />
+                <span>MAGO House &amp; partnership</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="topic[]" value="Something else" />
+                <span>Something else</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="fld">
+            <label for="f-message">Anything else we should know? <span style="opacity:0.6; font-weight:400; text-transform:none; letter-spacing:0;">(optional)</span></label>
+            <textarea id="f-message" name="message" rows="3" placeholder="A line or two — referrer, timing, context."></textarea>
+          </div>
+
+          <!-- Honeypot — Web3Forms reads this field name and silently drops the
+               submission if it's filled. Humans never see it. -->
+          <div class="honeypot" aria-hidden="true">
+            <label for="f-website">Leave this field empty</label>
+            <input id="f-website" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" name="consent" value="Agreed" required aria-required="true" />
+            <span>
+              I agree to be contacted by MAGOCLUB regarding my inquiry. See our
+              <a href="#">Privacy Policy</a>.
+            </span>
+          </label>
+
+          <div class="form-submit">
+            <button type="submit" class="btn-submit">
+              <span class="btn-submit__label">Register your interest</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="small">We reply within five working days.</p>
+            <p class="error-msg form-error" role="alert" style="display:none; color: var(--mago-copper);">Something went wrong. Please try again, or email <a href="mailto:magoconceptt@gmail.com">magoconceptt@gmail.com</a>.</p>
+          </div>
+        </div>
+
+        <div class="form-success" role="status" aria-live="polite">
+          <h3>Thank you.</h3>
+          <span class="rule" aria-hidden="true" style="display:block; width:48px; height:1px; background: var(--mago-copper);"></span>
+          <p>Maria will be in touch within five working days.</p>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+  <script src="js/include.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // ?topic= pre-select. Supports a single value or a comma-separated list:
+    //   ?topic=body
+    //   ?topic=body,skill
+    // Maps short URL keys to the checkbox VALUES used by the form.
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var topic = params.get('topic');
+      if (!topic) return;
+      var map = {
+        body: 'Personal Training (Body)',
+        skill: 'Couture Combat (Skill)',
+        mind: 'Wellness Coaching (Mind)',
+        connection: 'The Assembly (Connection)',
+        partnership: 'MAGO House & partnership',
+        other: 'Something else'
+      };
+      topic.split(',').forEach(function (key) {
+        var value = map[key.trim().toLowerCase()];
+        if (!value) return;
+        var box = document.querySelector('input[name="topic[]"][value="' + value.replace(/"/g, '\\"') + '"]');
+        if (box) box.checked = true;
+      });
+    })();
+
+    // Real submission to Web3Forms (POSTs JSON, handles response in-page).
+    (function () {
+      var form = document.querySelector('.register-form');
+      if (!form) return;
+      var submitBtn = form.querySelector('.btn-submit');
+      var submitLabel = form.querySelector('.btn-submit__label');
+      var formError = form.querySelector('.form-error');
+      var originalLabel = submitLabel ? submitLabel.textContent : 'Register your interest';
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (formError) formError.style.display = 'none';
+
+        // Client-side validation
+        var name = form.querySelector('#f-name');
+        var email = form.querySelector('#f-email');
+        var phone = form.querySelector('#f-phone');
+        var consent = form.querySelector('input[name="consent"]');
+        var ok = true;
+        [name, email, phone].forEach(function (el) {
+          var fld = el.closest('.fld');
+          if (!el.value || (el.type === 'email' && !/.+@.+\..+/.test(el.value))) {
+            fld.classList.add('is-error'); ok = false;
+          } else {
+            fld.classList.remove('is-error');
+          }
+        });
+        if (!consent.checked) ok = false;
+        if (!ok) return;
+
+        // Lock submit button while in flight
+        if (submitBtn) submitBtn.disabled = true;
+        if (submitLabel) submitLabel.textContent = 'Sending…';
+
+        var data = new FormData(form);
+        // Web3Forms expects JSON
+        var payload = {};
+        data.forEach(function (value, key) {
+          if (payload[key] !== undefined) {
+            if (!Array.isArray(payload[key])) payload[key] = [payload[key]];
+            payload[key].push(value);
+          } else {
+            payload[key] = value;
+          }
+        });
+
+        fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload)
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (json) {
+            if (json && json.success) {
+              form.classList.add('is-submitted');
+            } else {
+              throw new Error((json && json.message) || 'Submission failed');
+            }
+          })
+          .catch(function (err) {
+            console.error('Web3Forms submission error:', err);
+            if (formError) formError.style.display = 'block';
+            if (submitBtn) submitBtn.disabled = false;
+            if (submitLabel) submitLabel.textContent = originalLabel;
+          });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="The page you were looking for is not on the floor. MAGOCLUB — Marylebone, London." />
+  <meta name="robots" content="noindex" />
+  <title>404 — Off the Floor | MAGOCLUB</title>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+
+  <style>
+    /* 404 page — quietly architectural, on-brand, single screen.
+       Built on the existing .type-hero pattern. */
+    .err-page {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      isolation: isolate;
+      display: grid;
+      align-items: center;
+    }
+    .err-page .bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+    .err-page .bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.45) saturate(0.85);
+    }
+    .err-page .scrim {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse at center, rgba(28,20,13,0.35), rgba(28,20,13,0.95) 80%),
+        linear-gradient(180deg, rgba(28,20,13,0.55), rgba(28,20,13,0.55));
+    }
+    .err-page .frame {
+      max-width: var(--container-max);
+      width: 100%;
+      margin: 0 auto;
+      padding: var(--space-10) var(--gutter);
+      text-align: center;
+      display: grid;
+      gap: var(--space-6);
+      justify-items: center;
+    }
+    .err-page .code {
+      font-family: var(--font-serif);
+      font-size: clamp(6rem, 18vw, 14rem);
+      line-height: 0.95;
+      color: var(--mago-cream);
+      letter-spacing: -0.04em;
+      margin: 0;
+      font-feature-settings: "lnum";
+      font-variation-settings: "opsz" var(--serif-opsz-display), "SOFT" var(--serif-soft);
+    }
+    .err-page .code .italic { color: var(--mago-copper); }
+    .err-page h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      line-height: 1.1;
+      color: var(--mago-cream);
+      max-width: 22ch;
+      margin: 0;
+      letter-spacing: var(--ls-tight);
+    }
+    .err-page .lede {
+      color: var(--mago-cream-2);
+      opacity: 0.9;
+      max-width: 50ch;
+      margin: 0;
+    }
+    .err-page .actions {
+      display: flex;
+      gap: var(--space-9);
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: var(--space-3);
+    }
+    .err-page .pillars-quick {
+      margin-top: var(--space-7);
+      padding-top: var(--space-7);
+      border-top: 1px solid var(--mago-hairline-cream);
+      display: grid;
+      gap: var(--space-3);
+    }
+    .err-page .pillars-quick .label {
+      font-family: var(--font-sans);
+      font-size: var(--fs-label);
+      font-weight: 500;
+      letter-spacing: var(--ls-label);
+      text-transform: uppercase;
+      color: var(--mago-copper);
+    }
+    .err-page .pillars-quick ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-5);
+    }
+    .err-page .pillars-quick a {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--mago-cream-2);
+      text-decoration: none;
+      transition: color var(--dur-base) var(--ease-considered);
+    }
+    .err-page .pillars-quick a:hover { color: var(--mago-cream); }
+    .err-page .pillars-quick a .roman {
+      font-style: italic;
+      color: var(--mago-copper);
+      margin-right: var(--space-2);
+    }
+  </style>
+</head>
+<body data-page="404">
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div data-include="partials/nav.html"></div>
+
+  <main id="main">
+
+    <section class="err-page" aria-labelledby="err-headline">
+      <div class="bg" aria-hidden="true" data-kenburns>
+        <img
+          src="images/New Images/morgan-petroski-rx6wXNsXUOE-unsplash.jpg"
+          alt=""
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <div class="scrim" aria-hidden="true"></div>
+
+      <div class="frame" data-reveal-load>
+        <p class="label-tic">Error · Off the floor</p>
+        <p class="code">4<span class="italic">0</span>4</p>
+        <h1 id="err-headline">
+          The page you were looking for <span class="italic">is not on the floor.</span>
+        </h1>
+        <p class="lede t-body-l">
+          The link is broken, the page has been retired, or you arrived a beat
+          early. Either way — let us reset the architecture.
+        </p>
+
+        <div class="actions">
+          <a href="index.html" class="btn btn--primary">Return home <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="register-interest.html" class="btn btn--ghost">By private inquiry <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+
+        <nav class="pillars-quick" aria-label="The Four Pillars">
+          <span class="label">Or begin with one of the pillars</span>
+          <ul>
+            <li><a href="the-pillars/body.html"><span class="roman">I</span>Body</a></li>
+            <li><a href="the-pillars/skill.html"><span class="roman">II</span>Skill</a></li>
+            <li><a href="the-pillars/mind.html"><span class="roman">III</span>Mind</a></li>
+            <li><a href="the-pillars/connection.html"><span class="roman">IV</span>Connection</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+  <script src="js/include.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>

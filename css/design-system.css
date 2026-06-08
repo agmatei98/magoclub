@@ -1,0 +1,501 @@
+/* =========================================================
+   MAGO CLUB — DESIGN SYSTEM PAGE
+   Visual tour of foundations + components.
+   ========================================================= */
+
+/* ---------- Reset (light) ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-rendering: optimizeLegibility; }
+body { margin: 0; }
+img { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+input, textarea { font: inherit; color: inherit; }
+a { color: inherit; }
+
+/* ---------- Page shell ---------- */
+body {
+  background: var(--mago-stage);
+  color: var(--mago-cream-2);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible { outline: 2px solid var(--mago-copper); outline-offset: 4px; border-radius: 2px; }
+
+/* Local nav (shared between system pages) */
+.local-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(28, 20, 13, 0.85);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid var(--mago-hairline-cream);
+}
+.local-nav .inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-4) var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+.local-nav .wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--mago-cream);
+  text-decoration: none;
+  letter-spacing: var(--ls-tight);
+}
+.local-nav .wordmark em { color: var(--mago-copper); font-style: italic; }
+.local-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--space-7); }
+.local-nav a {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--mago-cream-2);
+  opacity: 0.8;
+  transition: opacity var(--dur-base) var(--ease-considered), color var(--dur-base) var(--ease-considered);
+}
+.local-nav a:hover, .local-nav a[aria-current="page"] { opacity: 1; color: var(--mago-cream); }
+.local-nav a[aria-current="page"] { border-bottom: 1px solid var(--mago-copper); padding-bottom: 2px; }
+@media (max-width: 720px) { .local-nav ul { gap: var(--space-4); } }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--mago-cream);
+  color: var(--mago-ink);
+  padding: var(--space-3) var(--space-5);
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 100;
+}
+.skip-link:focus { left: var(--space-5); top: var(--space-5); }
+
+.page {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-10) var(--gutter) var(--space-10);
+}
+
+/* ---------- Typography classes ---------- */
+.t-serif { font-family: var(--font-serif); font-weight: 400; letter-spacing: var(--ls-tight); }
+.t-serif-italic { font-family: var(--font-serif); font-weight: 400; font-style: italic; }
+.t-sans { font-family: var(--font-sans); }
+
+.display-xl {
+  font-family: var(--font-serif);
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-tight);
+  font-weight: 400;
+  font-variation-settings: "opsz" var(--serif-opsz-display), "SOFT" var(--serif-soft);
+  margin: 0;
+}
+.display-l {
+  font-family: var(--font-serif);
+  font-size: var(--fs-display-l);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-tight);
+  font-weight: 400;
+  font-variation-settings: "opsz" var(--serif-opsz-display), "SOFT" var(--serif-soft);
+  margin: 0;
+}
+.display-m {
+  font-family: var(--font-serif);
+  font-size: var(--fs-display-m);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-tight);
+  font-weight: 400;
+  margin: 0;
+}
+.h1 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-heading);
+  font-weight: 400;
+  margin: 0;
+}
+.h2 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  font-weight: 400;
+  margin: 0;
+}
+.body-l { font-size: var(--fs-body-l); line-height: var(--lh-body); }
+.body   { font-size: var(--fs-body);   line-height: var(--lh-body); }
+.body-s { font-size: var(--fs-body-s); line-height: var(--lh-body); color: var(--mago-ink-muted); }
+.label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.italic { font-style: italic; }
+
+/* ---------- Section label tic (//Section Name) ---------- */
+.section-label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--mago-copper);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.section-label::before {
+  content: "//";
+  color: var(--mago-copper);
+  opacity: 0.7;
+}
+
+/* ---------- Section layout ---------- */
+.section {
+  padding: var(--space-10) 0;
+  border-top: var(--hairline) solid var(--mago-hairline-cream);
+}
+.section:first-of-type { border-top: 0; padding-top: var(--space-7); }
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-7);
+  margin-bottom: var(--space-9);
+  align-items: end;
+}
+.section-head .section-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-display-m);
+  line-height: var(--lh-heading);
+  margin: var(--space-3) 0 0;
+  color: var(--mago-cream);
+}
+.section-head .section-blurb {
+  color: var(--mago-cream-2);
+  opacity: 0.8;
+  max-width: 56ch;
+}
+
+@media (max-width: 720px) {
+  .section-head { grid-template-columns: 1fr; gap: var(--space-4); margin-bottom: var(--space-7); }
+}
+
+/* ---------- Cream card on stage ---------- */
+.cream-card {
+  background: var(--mago-cream);
+  color: var(--mago-ink);
+  border-radius: var(--radius-card);
+  border: var(--hairline) solid var(--mago-hairline-copper);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+}
+
+/* =========================================================
+   MASTHEAD
+   ========================================================= */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: var(--space-7);
+  padding-bottom: var(--space-9);
+  border-bottom: var(--hairline) solid var(--mago-hairline-cream);
+}
+.masthead .wordmark {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: var(--ls-tight);
+  color: var(--mago-cream);
+  margin: 0;
+}
+.masthead .wordmark em { font-style: italic; color: var(--mago-copper); }
+.masthead .meta {
+  text-align: right;
+  color: var(--mago-cream-2);
+  opacity: 0.7;
+}
+.masthead .meta div + div { margin-top: var(--space-1); }
+
+/* =========================================================
+   COLOR
+   ========================================================= */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+.swatch {
+  border-radius: 16px;
+  overflow: hidden;
+  border: var(--hairline) solid var(--mago-hairline-cream);
+  display: flex;
+  flex-direction: column;
+}
+.swatch .chip {
+  height: 140px;
+  position: relative;
+}
+.swatch .chip[data-light="true"] { border-bottom: var(--hairline) solid var(--mago-hairline-copper); }
+.swatch .meta {
+  padding: var(--space-4);
+  background: var(--mago-stage-2);
+  display: grid;
+  gap: var(--space-1);
+}
+.swatch .meta .name { font-weight: 500; color: var(--mago-cream); }
+.swatch .meta .hex { font-family: var(--font-mono); font-size: var(--fs-body-s); color: var(--mago-cream-2); opacity: 0.7; }
+.swatch .meta .role { font-size: var(--fs-body-s); color: var(--mago-cream-2); opacity: 0.6; }
+
+/* =========================================================
+   TYPOGRAPHY SHOWCASE
+   ========================================================= */
+.type-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-7);
+  padding: var(--space-6) 0;
+  border-bottom: var(--hairline) solid var(--mago-hairline-cream);
+  align-items: baseline;
+}
+.type-row:last-child { border-bottom: 0; }
+.type-row .meta {
+  font-family: var(--font-sans);
+  color: var(--mago-cream-2);
+  opacity: 0.7;
+}
+.type-row .meta .token {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-s);
+  color: var(--mago-copper);
+  margin-bottom: var(--space-1);
+}
+.type-row .specimen { color: var(--mago-cream); }
+
+@media (max-width: 720px) {
+  .type-row { grid-template-columns: 1fr; gap: var(--space-3); }
+}
+
+/* Font-pairing hero */
+.pair-hero {
+  padding: var(--space-9) 0;
+}
+.pair-hero .kicker { color: var(--mago-copper); margin-bottom: var(--space-5); }
+.pair-hero h1 { color: var(--mago-cream); max-width: 16ch; }
+.pair-hero p {
+  color: var(--mago-cream-2);
+  opacity: 0.85;
+  max-width: 52ch;
+  margin: var(--space-6) 0 0;
+  font-size: var(--fs-body-l);
+  line-height: var(--lh-body);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+/* Shared base */
+.btn {
+  --_color: var(--mago-cream);
+  --_underline: var(--mago-copper);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--_color);
+  text-decoration: none;
+  position: relative;
+  padding: var(--space-3) 0;
+  transition: color var(--dur-base) var(--ease-considered);
+}
+.btn .arrow {
+  display: inline-block;
+  transition: transform var(--dur-base) var(--ease-considered);
+}
+.btn:hover .arrow { transform: translateX(6px); }
+.btn:focus-visible { outline: none; }
+.btn:focus-visible::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px solid var(--mago-copper);
+  border-radius: 4px;
+}
+
+/* On cream surface override */
+.cream-card .btn { --_color: var(--mago-ink); }
+
+/* Variant: primary — copper underline that draws in on hover */
+.btn--primary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: var(--space-2);
+  height: 1px;
+  width: 100%;
+  background: var(--_underline);
+  transform-origin: left;
+  transform: scaleX(1);
+  transition: transform var(--dur-base) var(--ease-considered);
+}
+.btn--primary:hover::before { transform: scaleX(1.06); }
+
+/* Variant: ghost — same shape, no underline */
+.btn--ghost {
+  opacity: 0.85;
+}
+.btn--ghost:hover { opacity: 1; }
+
+/* Variant: outline pill — for rare cases where we need a button-shaped CTA */
+.btn--pill {
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--mago-copper);
+  border-radius: var(--radius-pill);
+  transition:
+    background-color var(--dur-base) var(--ease-considered),
+    color var(--dur-base) var(--ease-considered);
+}
+.btn--pill:hover {
+  background: var(--mago-copper);
+  color: var(--mago-stage);
+}
+
+/* Variant: filled — the loudest we ever get. Use sparingly (Apply CTA only). */
+.btn--filled {
+  padding: var(--space-4) var(--space-6);
+  background: var(--mago-cream);
+  color: var(--mago-ink);
+  border-radius: var(--radius-pill);
+  transition:
+    background-color var(--dur-base) var(--ease-considered),
+    color var(--dur-base) var(--ease-considered);
+}
+.btn--filled:hover {
+  background: var(--mago-copper);
+  color: var(--mago-cream);
+}
+
+/* Disabled */
+.btn[aria-disabled="true"], .btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.btn[aria-disabled="true"]::before,
+.btn:disabled::before { background: var(--mago-cream-2); }
+
+/* Button gallery layout */
+.btn-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+}
+.btn-gallery > div {
+  display: grid;
+  gap: var(--space-5);
+  align-content: start;
+  padding: var(--space-6);
+  border-radius: var(--radius-card);
+}
+.btn-gallery .on-stage {
+  background: var(--mago-stage-2);
+  border: var(--hairline) solid var(--mago-hairline-cream);
+}
+.btn-gallery .on-cream {
+  background: var(--mago-cream);
+  border: var(--hairline) solid var(--mago-hairline-copper);
+}
+.btn-gallery .surface-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-s);
+  color: var(--mago-copper);
+  margin-bottom: var(--space-3);
+}
+.btn-gallery .on-cream .surface-label { color: var(--mago-copper-soft); }
+.btn-gallery .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-7);
+  align-items: center;
+}
+.btn-gallery .row .caption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-s);
+  opacity: 0.6;
+  margin-top: var(--space-2);
+}
+.btn-gallery .row > div { display: grid; gap: var(--space-1); }
+
+@media (max-width: 720px) {
+  .btn-gallery { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   FORM (preview — underline-only inputs)
+   ========================================================= */
+.field {
+  display: grid;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--mago-hairline-cream);
+  padding-bottom: var(--space-3);
+}
+.cream-card .field { border-bottom-color: var(--mago-hairline-copper); }
+.field label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.field input {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  outline: none;
+}
+.field input:focus { caret-color: var(--mago-copper); }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.colophon {
+  margin-top: var(--space-10);
+  padding-top: var(--space-7);
+  border-top: var(--hairline) solid var(--mago-hairline-cream);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-s);
+  color: var(--mago-cream-2);
+  opacity: 0.6;
+}
+@media (max-width: 720px) {
+  .colophon { flex-direction: column; gap: var(--space-2); }
+}
