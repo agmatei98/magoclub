@@ -187,7 +187,7 @@ a { color: inherit; }
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(28,20,13,0.55) 0%, rgba(28,20,13,0.15) 30%, rgba(28,20,13,0.85) 75%, rgba(28,20,13,0.98) 100%),
+    linear-gradient(180deg, rgba(28,20,13,0.62) 0%, rgba(28,20,13,0.38) 30%, rgba(28,20,13,0.85) 75%, rgba(28,20,13,0.98) 100%),
     radial-gradient(ellipse at 30% 90%, rgba(28,20,13,0.55), transparent 60%);
 }
 .hero-cinematic .frame {
@@ -269,6 +269,13 @@ a { color: inherit; }
   overflow: hidden;
   border: 1px solid var(--mago-hairline-copper);
   aspect-ratio: 4 / 5;
+  /* ponytail: cap at the grid column. Without it, a tall copy column stretches
+     the row and aspect-ratio derives width from height, overflowing into the
+     copy. min-height keeps the 4/5 look when the copy is short. */
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  align-self: stretch;
 }
 .hero-split .image img { width: 100%; height: 100%; object-fit: cover; }
 .hero-split .copy { display: flex; flex-direction: column; justify-content: center; gap: var(--space-6); }
@@ -2325,3 +2332,20 @@ a { color: inherit; }
   .press-logo { max-height: 44px; }
 }
 
+
+/* =========================================================
+   LEGAL NOTICE — small print, page foot (Pillar III)
+   ========================================================= */
+.legal-notice {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-7) var(--gutter) var(--space-8);
+  border-top: 1px solid var(--mago-hairline-cream);
+}
+.legal-notice p {
+  max-width: 90ch;
+  color: var(--mago-cream-2);
+  opacity: 0.55;
+  margin: 0;
+}
+.legal-notice strong { font-weight: 500; letter-spacing: var(--ls-label); }
